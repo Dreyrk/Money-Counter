@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
           await dbConnection();
           const user = await Users.findOne({ username });
           if (!user) {
-            throw Error("email/password mismatch");
+            throw Error("No user in database");
           }
 
           const passwordsMatch = await bcrypt.compare(password, user.password);
