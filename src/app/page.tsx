@@ -6,6 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 export default function Home() {
   return (
     <main className="h-[90vh] p-16 flex flex-col justify-evenly items-center">
+      <Link href="/auth">Login/Register</Link>
       <h1 className="text-6xl w-full text-center text-primary">
         Money Counter
       </h1>
