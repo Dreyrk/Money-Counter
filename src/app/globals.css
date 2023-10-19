@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.no-style-btn {
+  background: none;
+  border: none;
+}

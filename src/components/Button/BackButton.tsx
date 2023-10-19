@@ -6,8 +6,8 @@ export default function BackButton() {
     <Link href="/" replace={true}>
       <button
         type="button"
-        className="hover:scale-90 rounded-full p-2 bg-black">
-        <ArrowBackIcon fontSize="large" htmlColor="white" />
+        className="hover:scale-90 rounded-full p-1 bg-primary absolute left-6 top-5">
+        <ArrowBackIcon fontSize="large" htmlColor="black" />
       </button>
     </Link>
   );

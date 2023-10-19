@@ -34,6 +34,38 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
+  pages: {
+    signIn: "/auth",
+    signOut: "/auth",
+  },
+  callbacks: {
+    async jwt({ token, user, session, trigger }) {
+      if (trigger === "update" && session?.username) {
+        token.user.username = session.username;
+      }
+      if (user) {
+        token = {
+          ...token,
+          user: {
+            id: user?._id,
+            username: user?.username,
+          },
+        };
+        await Users.findByIdAndUpdate(token.user.id, {
+          username: token.user.username,
+        });
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);

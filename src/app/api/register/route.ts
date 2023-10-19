@@ -3,7 +3,7 @@ import dbConnection from "@/lib/database";
 import Users from "@/lib/models/Users";
 import bcrypt from "bcryptjs";
 
-async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
   try {
     await dbConnection();
@@ -17,7 +17,7 @@ async function POST(req: NextRequest) {
         });
       } else {
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = bcrypt.hash(password, salt);
+        const hashedPassword = await bcrypt.hash(password, salt);
         await Users.create({ username, password: hashedPassword });
         return NextResponse.json(
           { success: true, message: "User registered" },
