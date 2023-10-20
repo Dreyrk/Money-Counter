@@ -4,6 +4,18 @@ export interface Spending {
   title: string;
   amount: number;
   description: string;
+  date?: string;
+  category?:
+    | "food"
+    | "drinks"
+    | "fuel"
+    | "hobbies"
+    | "subscriptions"
+    | "shopping"
+    | "travel"
+    | "other";
+  period?: "daily" | "monthly" | "yearly";
+  createdAt?: string;
 }
 
 export interface User {
