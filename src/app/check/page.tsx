@@ -14,7 +14,7 @@ export default async function Page() {
   return (
     <div className="h-full mt-10">
       <SpendingHeader spending={spending} />
-      <ul className="bg-primary rounded-lg">
+      <ul className="bg-primary rounded-lg min-h-[500px] overflow-auto max-h-[630px]">
         {spending.map((el: Spending) => (
           <SpendingItem spending={el} key={el.title} />
         ))}
