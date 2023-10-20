@@ -14,6 +14,11 @@ export default async function Page() {
       <h2 className="font-bold text-center text-xl text-primary">
         {session?.user.username}
       </h2>
+      <ul>
+        <li>Daily Spending :</li>
+        <li>Monthly Spending :</li>
+        <li>Yearly Spending :</li>
+      </ul>
       <SignOutButton />
     </div>
   );
