@@ -6,6 +6,9 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import { Spending } from "@/types";
 import SpendingItem from "@/components/SpendingItem";
 import SpendingHeader from "@/components/SpendingHeader";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import SpendingDisplay from "@/components/SpendingDisplay";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
@@ -14,11 +17,7 @@ export default async function Page() {
   return (
     <div className="h-full mt-10">
       <SpendingHeader spending={spending} />
-      <ul className="bg-primary rounded-lg min-h-[500px] overflow-auto max-h-[630px]">
-        {spending.map((el: Spending) => (
-          <SpendingItem spending={el} key={el.title} />
-        ))}
-      </ul>
+      <SpendingDisplay spending={spending} />
     </div>
   );
 }

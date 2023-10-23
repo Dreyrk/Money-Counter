@@ -19,7 +19,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      <body className="p-2 pt-20 bg-body relative">
+      <body className="p-2 pt-20 bg-body relative overflow-hidden max-h-screen">
         <BackButton />
         <AuthProvider session={session}>
           <ProfileButton />

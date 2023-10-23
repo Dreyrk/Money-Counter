@@ -8,7 +8,7 @@ import bcrypt from "bcryptjs";
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "account",
+      name: "credentials",
       credentials: {},
       async authorize(credentials) {
         const { username, password } = credentials as {
@@ -40,7 +40,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth",
-    signOut: "/auth",
   },
   callbacks: {
     async jwt({ token, user, session, trigger }) {

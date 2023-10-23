@@ -15,7 +15,7 @@ export default function CreateSpendingForm() {
     const spending: any = {};
     const userId = session?.user.id;
     formData.forEach((value: string | number, key: string) => {
-      if (value !== "") {
+      if (value) {
         spending[key] = value;
       }
     });
