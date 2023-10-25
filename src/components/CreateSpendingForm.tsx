@@ -7,6 +7,7 @@ import capitalize from "@/utils/capitalize";
 import EuroIcon from "@mui/icons-material/Euro";
 import createSpending from "@/serverActions/createSpending";
 import SubmitButton from "./Button/SubmitButton";
+import { toast } from "react-toastify";
 
 export default function CreateSpendingForm() {
   const { data: session } = useSession();
@@ -23,8 +24,10 @@ export default function CreateSpendingForm() {
     if (userId) {
       const created = await createSpending(userId, spending);
       if (created) {
+        toast.success("Created !");
         redirect("/check");
       } else {
+        toast.error("Something wrong...");
         console.error("not created");
       }
     }

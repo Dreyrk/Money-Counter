@@ -12,11 +12,12 @@ export default function SpendingHeader({ spending }: { spending: Spending[] }) {
       }
       return result.reduce((acc, curr) => acc + curr);
     } else {
-      redirect("/");
+      redirect("/auth");
     }
   };
+
   return (
-    <>
+    <div>
       <div className="text-primary flex items-center justify-center gap-6">
         <h1 className="font-bold text-4xl">Spending </h1>
         <select
@@ -32,6 +33,6 @@ export default function SpendingHeader({ spending }: { spending: Spending[] }) {
         {spendingSum()}
         <EuroIcon fontSize="medium" htmlColor="white" />/ Month
       </h2>
-    </>
+    </div>
   );
 }

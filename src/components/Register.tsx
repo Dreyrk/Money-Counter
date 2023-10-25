@@ -73,17 +73,6 @@ export default function Register({ handleClick }: AuthProps) {
   } else {
     return (
       <div className="relative grid place-content-center my-8">
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="dark"
-        />
         <form
           onSubmit={register}
           className="flex flex-col items-center justify-center gap-12 p-8 max-w-sm bg-slate-100 rounded-lg">

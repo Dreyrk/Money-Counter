@@ -2,7 +2,6 @@
 
 import dbConnection from "@/lib/database";
 import Users from "@/lib/models/Users";
-import { Spending } from "@/types";
 
 async function getSpending(userId: string) {
   try {

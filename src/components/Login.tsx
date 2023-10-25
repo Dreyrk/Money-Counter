@@ -62,17 +62,6 @@ export default function Login({ handleClick }: AuthProps) {
   } else {
     return (
       <div className="grid place-content-center my-28">
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="dark"
-        />
         <form
           onSubmit={login}
           className="flex flex-col items-center rounded-lg bg-slate-100 max-w-sm justify-center gap-12 p-6">
