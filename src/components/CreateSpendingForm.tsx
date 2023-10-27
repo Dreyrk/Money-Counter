@@ -52,6 +52,7 @@ export default function CreateSpendingForm() {
           <input
             className="rounded-md p-2"
             type="number"
+            step="0.01"
             id="amount"
             name="amount"
           />

@@ -1,5 +1,3 @@
-"use client";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -9,7 +7,7 @@ export default function ManageSpending() {
       <button type="button" className="bg-slate-700 rounded-md p-0.5">
         <EditIcon fontSize="large" htmlColor="white" />
       </button>
-      <button type="button" className="bg-slate-700 rounded-md p-0.5">
+      <button type="submit" className="bg-slate-700 rounded-md p-0.5">
         <DeleteIcon fontSize="large" htmlColor="red" />
       </button>
     </div>

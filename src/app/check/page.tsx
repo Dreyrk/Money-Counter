@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <div className="h-full mt-10">
       <SpendingHeader spending={spending} />
-      <SpendingDisplay spending={spending} />
+      <SpendingDisplay session={session} spending={spending} />
     </div>
   );
 }

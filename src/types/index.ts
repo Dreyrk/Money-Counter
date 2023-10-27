@@ -1,6 +1,7 @@
 import { SvgIconProps } from "@mui/material";
 
 export interface Spending {
+  _id: string;
   title: string;
   amount: number;
   description: string;

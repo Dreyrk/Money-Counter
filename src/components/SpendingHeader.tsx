@@ -5,7 +5,7 @@ import EuroIcon from "@mui/icons-material/Euro";
 export default function SpendingHeader({ spending }: { spending: Spending[] }) {
   const spendingSum = () => {
     if (spending) {
-      const result = [];
+      const result = [0];
       for (let i = 0; i < spending.length; i++) {
         const spend = spending[i];
         result.push(spend.amount);
